@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  database:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=serpentin
+      - MONGO_INITDB_ROOT_USERNAME=serpentin
+      - MONGO_INITDB_ROOT_PASSWORD=serpentin
+    volumes:
+      - ./volumes/mongo:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
